@@ -1,30 +1,30 @@
 <img
-  src="https://raw.githubusercontent.com/kube/vscode-42header/master/42.png" 
+  src="https://raw.githubusercontent.com/oscarmulder/vscode-codam-header/master/codam.png" 
   width=128>
 
-# 42 Header for VSCode
-
-This extension provides the 42 header integration in VS Code.
+# Codam Header for VSCode
+      
+This extension provides the Codam header integration in VS Code. It's 42 original is found at https://github.com/kube/vscode-42header .
 
 ```bash
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    vscode-42header                                    :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: kube <hello@kube.io>                       +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2013/11/18 13:37:42 by kube              #+#    #+#              #
-#    Updated: 2016/09/18 13:11:04 by kube             ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
+# ************************************************************************** #
+#                                                                            #
+#                                                        ::::::::            #
+#   vscode-codam-header                                :+:    :+:            #
+#                                                     +:+                    #
+#   By: omulder <omulder@student.codam.nl>           +#+                     #
+#                                                   +#+                      #
+#   Created: 2019/01/11 19:08:02 by omulder       #+#    #+#                 #
+#   Updated: 2019/01/11 19:08:02 by omulder       ########   odam.nl         #
+#                                                                            #
+# ************************************************************************** #
 ```
 
 ## Install
 
 Launch Quick Open with <kbd>⌘</kbd>+<kbd>P</kbd> and enter
 ```
-ext install 42header
+ext install codamheader
 ```
 
 ## Usage
@@ -44,8 +44,8 @@ To override these values, specify these properties in *User Settings* :
 
 ```ts
 {
-  "42header.username": string,
-  "42header.email": string
+  "codamheader.username": string,
+  "codamheader.email": string
 }
 ```
 
