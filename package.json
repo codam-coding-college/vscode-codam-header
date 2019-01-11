@@ -27,11 +27,11 @@
   "contributes": {
     "configuration": {
       "properties": {
-        "42header.username": {
+        "codamheader.username": {
           "type": "string",
           "description": "Username to use in Codam headers"
         },
-        "42header.email": {
+        "codamheader.email": {
           "type": "string",
           "description": "Email address to use in Codam headers"
         }
