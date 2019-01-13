@@ -34,6 +34,7 @@ export const languageDemiliters: { [lang: string]: string[] | undefined } = {
   'less': slashes,
   'lua': semicolons,
   'makefile': hashes,
+  'markdown': hashes,
   'objective-c': slashes,
   'ocaml': parens,
   'perl': hashes,

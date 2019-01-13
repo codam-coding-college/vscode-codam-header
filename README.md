@@ -14,7 +14,7 @@ This extension provides the Codam header integration in VS Code. It's 42 origina
 #                                                     +:+                    #
 #   By: omulder <omulder@student.codam.nl>           +#+                     #
 #                                                   +#+                      #
-#   Created: 2019/01/11 19:08:02 by omulder       #+#    #+#                 #
+#   Created: 2019/01/11 19:08:02 by omulder        #+#    #+#                #
 #   Updated: 2019/01/11 19:08:02 by omulder       ########   odam.nl         #
 #                                                                            #
 # ************************************************************************** #
