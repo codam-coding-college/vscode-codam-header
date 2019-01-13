@@ -1,15 +1,3 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         ::::::::             #
-#    README.md                                          :+:    :+:             #
-#                                                      +:+                     #
-#    By: omulder <omulder@student.codam.nl>           +#+                      #
-#                                                    +#+                       #
-#    Created: 2019/01/13 14:37:32 by omulder        #+#    #+#                 #
-#    Updated: 2019/01/13 14:40:32 by omulder       ########   odam.nl          #
-#                                                                              #
-# **************************************************************************** #
-
 <img
   src="https://raw.githubusercontent.com/oscarmulder/vscode-codam-header/master/codam.png" 
   width=128>
