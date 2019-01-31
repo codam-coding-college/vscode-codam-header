@@ -2,7 +2,7 @@
   "name": "codamheader",
   "displayName": "Codam Header",
   "description": "Codam header for VSCode : www.codam.nl",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "publisher": "oscarmulder",
   "icon": "codam.png",
   "repository": {
