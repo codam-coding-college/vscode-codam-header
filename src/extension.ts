@@ -26,15 +26,22 @@ import {
  */
 const getCurrentUser = () =>
   vscode.workspace.getConfiguration()
-    .get('codamheader.username') || process.env['USER'] || 'anonymous'
+    .get('codamheader.CodamUsername') || process.env['USER'] || 'anonymous'
 
 /**
  * Return current user mail from config or default value
  */
 const getCurrentUserMail = () =>
   vscode.workspace.getConfiguration()
-    .get('codamheader.email') || `${getCurrentUser()}@student.codam.nl`
+    .get('codamheader.CodamEmail') || `${getCurrentUser()}@student.codam.nl`
 
+/**
+ * Return setting for changing the By: (username) <(email)> line.
+ */
+const getChangeName= () =>
+  vscode.workspace.getConfiguration()
+	.get('codamheader.ChangeAuthor')
+	
 /**
  * Update HeaderInfo with last update author and date, and update filename
  * Returns a fresh new HeaderInfo if none was passed
@@ -42,21 +49,37 @@ const getCurrentUserMail = () =>
 const newHeaderInfo = (document: TextDocument, headerInfo?: HeaderInfo) => {
   const user = getCurrentUser()
   const mail = getCurrentUserMail()
-
-  return Object.assign({},
-    // This will be overwritten if headerInfo is not null
-    {
-      createdAt: moment(),
-      createdBy: user
-    },
-    headerInfo,
-    {
-      filename: basename(document.fileName),
-      author: `${user} <${mail}>`,
-      updatedBy: user,
-      updatedAt: moment()
-    }
-  )
+  const setby = getChangeName()
+  
+  if (setby)
+	return Object.assign({},
+		// This will be overwritten if headerInfo is not null
+		{
+		createdAt: moment(),
+		createdBy: user
+		},
+		headerInfo,
+		{
+		filename: basename(document.fileName),
+		author: `${user} <${mail}>`,
+		updatedBy: user,
+		updatedAt: moment()
+		}
+	)
+  else
+	return Object.assign({},
+		// This will be overwritten if headerInfo is not null
+		{
+		createdAt: moment(),
+		createdBy: user
+		},
+		headerInfo,
+		{
+		filename: basename(document.fileName),
+		updatedBy: user,
+		updatedAt: moment()
+		}
+	)
 }
 
 /**

@@ -39,16 +39,18 @@ Header is automatically updated on save.
 ## Configuration
 
 Default values for **username** and **email** are imported from environment variables.
+You can also set the update behaviour of the 'By: (name) <(email)>' line.
 
-To override these values, specify these properties in *User Settings* :
+You can change al variables in 'Settings > Extensions > Codam Header' or by setting these properties in *User Settings* :
 
 ```ts
 {
-  "codamheader.username": string,
-  "codamheader.email": string
+  "codamheader.CodamUsername": string,
+  "codamheader.CodamEmail": string,
+  "codamheader.ChangeAuthor": boolean
 }
 ```
-
+Changing these variables overrides 
 
 ## Issues
 

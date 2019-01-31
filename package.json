@@ -2,7 +2,7 @@
   "name": "codamheader",
   "displayName": "Codam Header",
   "description": "Codam header for VSCode : www.codam.nl",
-  "version": "1.0.9",
+  "version": "1.0.12",
   "publisher": "oscarmulder",
   "icon": "codam.png",
   "repository": {
@@ -27,14 +27,19 @@
   "contributes": {
     "configuration": {
       "properties": {
-        "codamheader.username": {
+        "codamheader.CodamUsername": {
           "type": "string",
           "description": "Username to use in Codam headers"
         },
-        "codamheader.email": {
+        "codamheader.CodamEmail": {
           "type": "string",
           "description": "Email address to use in Codam headers"
-        }
+		},
+		"codamheader.ChangeAuthor": {
+			"type": "boolean",
+			"description": "Unset if you don't want the 'By: user <email>' line to be overwritten on save",
+			"default": true
+		  }
       }
     },
     "commands": [
