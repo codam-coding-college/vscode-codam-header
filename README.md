@@ -33,7 +33,7 @@ ext install codamheader
  - **macOS** : <kbd>⌘</kbd> + <kbd>⌥</kbd> + <kbd>H</kbd>
  - **Linux** / **Windows** : <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>H</kbd>.
 
-Header is automatically updated on save.
+If there are changes to the file, the header is automatically updated on save.
 
 
 ## Configuration

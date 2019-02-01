@@ -71,7 +71,8 @@ const newHeaderInfo = (document: TextDocument, headerInfo?: HeaderInfo) => {
 		// This will be overwritten if headerInfo is not null
 		{
 		createdAt: moment(),
-		createdBy: user
+		createdBy: user,
+		author: `${user} <${mail}>`
 		},
 		headerInfo,
 		{
@@ -122,11 +123,12 @@ const insertHeaderHandler = () => {
 const startUpdateOnSaveWatcher = (subscriptions: vscode.Disposable[]) =>
   vscode.workspace.onWillSaveTextDocument(event => {
     const document = event.document
-    const currentHeader = extractHeader(document.getText())
+	const currentHeader = extractHeader(document.getText())
+	const isChanged = document.isDirty
 
     event.waitUntil(
       Promise.resolve(
-        supportsLanguage(document.languageId) && currentHeader ?
+        supportsLanguage(document.languageId) && currentHeader && isChanged ?
           [
             TextEdit.replace(
               new Range(0, 0, 12, 0),
