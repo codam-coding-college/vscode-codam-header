@@ -1,13 +1,3 @@
-
-      /*#######.
-     ########",#:
-   #########',##".
-  ##'##'## .##',##.
-   ## ## ## # ##",#.
-    ## ## ## ## ##'
-     ## ## ## :##
-      ## ## ##*/
-
 import moment = require('moment')
 import { languageDemiliters } from './delimiters'
 
