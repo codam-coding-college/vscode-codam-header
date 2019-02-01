@@ -41,7 +41,7 @@ If there are changes to the file, the header is automatically updated on save.
 Default values for **username** and **email** are imported from environment variables.
 You can also set the update behaviour of the 'By: (name) <(email)>' line.
 
-You can change al variables in 'Settings > Extensions > Codam Header' or by setting these properties in *User Settings* :
+You can change all variables by going to 'Settings > Extensions > Codam Header' or by setting these properties in *User Settings* :
 
 ```ts
 {
@@ -50,7 +50,6 @@ You can change al variables in 'Settings > Extensions > Codam Header' or by sett
   "codamheader.ChangeAuthor": boolean
 }
 ```
-Changing these variables overrides 
 
 ## Issues
 
