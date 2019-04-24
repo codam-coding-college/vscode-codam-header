@@ -31,7 +31,14 @@ const getCurrentUserMail = () =>
 const getChangeName= () =>
   vscode.workspace.getConfiguration()
 	.get('codamheader.ChangeAuthor')
-	
+
+/**
+ * Return setting for changing the By: (username) <(email)> line.
+ */
+const getUpdateTime= () =>
+  vscode.workspace.getConfiguration()
+  .get('codamheader.UpdateTime')
+
 /**
  * Update HeaderInfo with last update author and date, and update filename
  * Returns a fresh new HeaderInfo if none was passed
@@ -40,37 +47,54 @@ const newHeaderInfo = (document: TextDocument, headerInfo?: HeaderInfo) => {
   const user = getCurrentUser()
   const mail = getCurrentUserMail()
   const setby = getChangeName()
+  const updateTime = getUpdateTime()
   
   if (setby)
-	return Object.assign({},
-		// This will be overwritten if headerInfo is not null
-		{
-		createdAt: moment(),
-		createdBy: user
-		},
-		headerInfo,
-		{
-		filename: basename(document.fileName),
-		author: `${user} <${mail}>`,
-		updatedBy: user,
-		updatedAt: moment()
-		}
-	)
+    return Object.assign({},
+      // This will be overwritten if headerInfo is not null
+      {
+      createdAt: moment(),
+      createdBy: user
+      },
+      headerInfo,
+      {
+      filename: basename(document.fileName),
+      author: `${user} <${mail}>`,
+      updatedBy: user,
+      updatedAt: moment()
+      }
+    )
   else
-	return Object.assign({},
-		// This will be overwritten if headerInfo is not null
-		{
-		createdAt: moment(),
-		createdBy: user,
-		author: `${user} <${mail}>`
-		},
-		headerInfo,
-		{
-		filename: basename(document.fileName),
-		updatedBy: user,
-		updatedAt: moment()
-		}
-	)
+    if (updateTime)
+      return Object.assign({},
+        // This will be overwritten if headerInfo is not null
+        {
+        createdAt: moment(),
+        createdBy: user,
+        author: `${user} <${mail}>`,
+        updatedBy: user,
+        updatedAt: moment()
+        },
+        headerInfo,
+        {
+        filename: basename(document.fileName)
+        }
+      )
+    else
+      return Object.assign({},
+        // This will be overwritten if headerInfo is not null
+        {
+        createdAt: moment(),
+        createdBy: user,
+        author: `${user} <${mail}>`
+        },
+        headerInfo,
+        {
+        filename: basename(document.fileName),
+        updatedBy: user,
+        updatedAt: moment()
+        }
+      )
 }
 
 /**
