@@ -71,13 +71,13 @@ const newHeaderInfo = (document: TextDocument, headerInfo?: HeaderInfo) => {
         {
         createdAt: moment(),
         createdBy: user,
-        author: `${user} <${mail}>`,
-        updatedBy: user,
-        updatedAt: moment()
+        author: `${user} <${mail}>`
         },
         headerInfo,
         {
-        filename: basename(document.fileName)
+		filename: basename(document.fileName),
+        updatedBy: user,
+        updatedAt: moment()
         }
       )
     else
@@ -86,13 +86,13 @@ const newHeaderInfo = (document: TextDocument, headerInfo?: HeaderInfo) => {
         {
         createdAt: moment(),
         createdBy: user,
-        author: `${user} <${mail}>`
+        author: `${user} <${mail}>`,
+        updatedBy: user,
+        updatedAt: moment()
         },
         headerInfo,
         {
-        filename: basename(document.fileName),
-        updatedBy: user,
-        updatedAt: moment()
+        filename: basename(document.fileName)
         }
       )
 }

@@ -2,7 +2,7 @@
   "name": "codamheader",
   "displayName": "Codam Header",
   "description": "Codam header for VSCode : www.codam.nl",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "publisher": "oscarmulder",
   "icon": "codam.png",
   "repository": {
@@ -31,20 +31,20 @@
           "type": "string",
           "description": "Username to use in Codam headers"
         },
-          "codamheader.CodamEmail": {
-            "type": "string",
-            "description": "Email address to use in Codam headers"
+        "codamheader.CodamEmail": {
+          "type": "string",
+          "description": "Email address to use in Codam headers"
         },
-          "codamheader.ChangeAuthor": {
-            "type": "boolean",
-            "description": "Unset if you don't want the 'By: user <email>' line to be overwritten on save",
-            "default": false
-          },
-          "codamheader.UpdateTime": {
-            "type": "boolean",
-            "description": "Unset if you don't want the 'Updated by:' to update on save. This will only work if ChangeAuthor is set to false. It will still update when you replace the header.",
-            "default": true            
-		}
+        "codamheader.ChangeAuthor": {
+          "type": "boolean",
+          "description": "Unset if you don't want the 'By: user <email>' line to be overwritten on save",
+          "default": false
+        },
+        "codamheader.UpdateTime": {
+          "type": "boolean",
+          "description": "Unset if you don't want the 'Updated by:' to update on save. This will only work if ChangeAuthor is set to false. It will still update when you replace the header.",
+          "default": true
+        }
       }
     },
     "commands": [
@@ -74,6 +74,7 @@
     "vscode": "^1.0.0"
   },
   "dependencies": {
-    "moment": "^2.15.0"
+    "moment": "^2.15.0",
+    "vsce": "^1.59.0"
   }
 }
