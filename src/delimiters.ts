@@ -4,6 +4,7 @@ const semicolons = [';; ', ' ;;']
 const parens = ['(* ', ' *)']
 const dashes = ['-- ', ' --']
 const percents = ['%% ', ' %%']
+const troffcom = ['.\\"', '"\\.']
 
 export const languageDemiliters: { [lang: string]: string[] | undefined } = {
   'c': slashes,
@@ -39,6 +40,7 @@ export const languageDemiliters: { [lang: string]: string[] | undefined } = {
   'shellscript': hashes,
   'sql': hashes,
   'swift': slashes,
+  'troff': troffcom,
   'typescript': slashes,
   'typescriptreact': slashes,
   'xsl': slashes,
