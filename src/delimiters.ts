@@ -1,5 +1,6 @@
 const hashes = ['# ', ' #']
 const slashes = ['/* ', ' */']
+const semicolon = ['; ', ' ;']
 const semicolons = [';; ', ' ;;']
 const parens = ['(* ', ' *)']
 const dashes = ['-- ', ' --']
@@ -7,6 +8,7 @@ const percents = ['%% ', ' %%']
 const troffcom = ['.\\"', '"\\.']
 
 export const languageDemiliters: { [lang: string]: string[] | undefined } = {
+  'asm' : semicolon,
   'c': slashes,
   'coffeescript': hashes,
   'cpp': slashes,
