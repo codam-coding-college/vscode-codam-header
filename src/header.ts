@@ -21,7 +21,7 @@ const genericTemplate = `
 *                                                      +:+                     *
 *    By: $AUTHOR________________________________      +#+                      *
 *                                                    +#+                       *
-*    Created: $CREATEDAT_________ by $CREATEDBY_    #+#    #+#                 *
+*    Created: $CREATEDAT_________ by $CREATEDBY_   #+#    #+#                  *
 *    Updated: $UPDATEDAT_________ by $UPDATEDBY_   ########   odam.nl          *
 *                                                                              *
 * **************************************************************************** *
