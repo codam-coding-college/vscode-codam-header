@@ -35,6 +35,12 @@ ext install codamheader
 
 If there are changes to the file, the header is automatically updated on save.
 
+### Convert all headers in workspace to correct Codamheader
+- **macOS** : <kbd>⌘</kbd>+<kbd>⇧</kbd>+<kbd>P</kbd> `>codamheader.convertHeaders`
+
+If you have different types of header in your workspace, this command converts
+all of them to the Codam header accepted by norminette. It will keep the original
+header info. It will run on **ALL .C AND .H FILES IN YOUR WORKSPACE**. Be sure to commit your work before running this.
 
 ## Configuration
 
@@ -47,7 +53,8 @@ You can change all variables by going to 'Settings > Extensions > Codam Header' 
 {
   "codamheader.CodamUsername": string,
   "codamheader.CodamEmail": string,
-  "codamheader.ChangeAuthor": boolean
+  "codamheader.ChangeAuthor": boolean,
+  "codamheader.UpdateTime": boolean
 }
 ```
 

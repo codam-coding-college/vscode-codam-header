@@ -11,6 +11,8 @@ import {
   supportsLanguage, HeaderInfo
 } from './header'
 
+var isConvertState:boolean = false
+
 /**
  * Return current user from config or ENV by default
  */
@@ -131,6 +133,40 @@ const insertHeaderHandler = () => {
     )
 }
 
+async function asyncForEach(array: Array<vscode.Uri>, callback: { (file: vscode.Uri): Promise<void>; (arg0: vscode.Uri): any }) {
+  for (let index = 0; index < array.length; index++) {
+    await callback(array[index]);
+  }
+}
+
+const convertHeadersHandler = async function () {
+  const allFiles = await vscode.workspace.findFiles('**/*.{c,h}', '')
+  isConvertState = true
+  await asyncForEach(allFiles, (async (file: vscode.Uri) => {
+    await vscode.workspace.openTextDocument(file).then(async (a: vscode.TextDocument) => {
+      await vscode.window.showTextDocument(a, 1, false).then( async e => {
+        await e.edit(editor => {
+          const currentHeader = extractHeader(a.getText())
+    
+          if (currentHeader)
+            editor.replace(
+              new Range(0, 0, 12, 0),
+              renderHeader(
+                a.languageId,
+                getHeaderInfo(currentHeader)
+              )    
+            )
+        }).then( async () => {
+          await a.save().then( async () => {
+            await vscode.commands.executeCommand("workbench.action.closeActiveEditor");
+          })
+        })
+      })
+    })
+  })
+  )
+  isConvertState = false
+}
 /**
  * Start watcher for document save to update current header
  */
@@ -142,7 +178,7 @@ const startUpdateOnSaveWatcher = (subscriptions: vscode.Disposable[]) =>
 
     event.waitUntil(
       Promise.resolve(
-        supportsLanguage(document.languageId) && currentHeader && isChanged ?
+        supportsLanguage(document.languageId) && currentHeader && isChanged && !isConvertState ?
           [
             TextEdit.replace(
               new Range(0, 0, 12, 0),
@@ -163,7 +199,9 @@ const startUpdateOnSaveWatcher = (subscriptions: vscode.Disposable[]) =>
 export const activate = (context: vscode.ExtensionContext) => {
   const disposable = vscode.commands
     .registerTextEditorCommand('codamheader.insertHeader', insertHeaderHandler)
-
+  const disposable2 = vscode.commands
+    .registerCommand('codamheader.convertHeaders', convertHeadersHandler)
+  context.subscriptions.push(disposable2)
   context.subscriptions.push(disposable)
   startUpdateOnSaveWatcher(context.subscriptions)
 }
