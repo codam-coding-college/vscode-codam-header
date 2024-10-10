@@ -1,10 +1,10 @@
 <img
-  src="https://raw.githubusercontent.com/oscarmulder/vscode-codam-header/master/codam.png" 
+  src="https://raw.githubusercontent.com/codam-coding-college/vscode-codam-header/master/codam.png"
   width=128>
 
 # Codam Header for VSCode
-      
-This extension provides the Codam header integration in VS Code. It's 42 original is found at https://github.com/kube/vscode-42header .
+
+This extension provides the Codam header integration in VS Code. Its 42 original is found at https://github.com/kube/vscode-42header.
 
 ```bash
 # ************************************************************************** #
@@ -60,7 +60,7 @@ You can change all variables by going to 'Settings > Extensions > Codam Header' 
 
 ## Issues
 
-To report a bug or ask for a feature, please open a [Github issue](https://github.com/OscarMulder/vscode-codam-header/issues).
+To report a bug or ask for a feature, please open a [Github issue](https://github.com/codam-coding-college/vscode-codam-header/issues).
 
 
 ## License
